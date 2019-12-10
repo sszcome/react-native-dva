@@ -3,6 +3,8 @@ import {StyleSheet, View} from 'react-native';
 import {connect} from 'react-redux';
 
 import {Button} from '../components';
+import WebView from '../native/ui/WebView';
+// import { WebView } from 'react-native-webview';
 
 import {NavigationActions} from '../utils';
 
@@ -19,7 +21,8 @@ class Detail extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Button text="Go Back" onPress={this.goBack}/>
+        <WebView style={styles.webViewClass} url={'https://www.baidu.com'} />
+        <Button text="Go Back" onPress={this.goBack} />
       </View>
     );
   }
@@ -30,6 +33,11 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  webViewClass: {
+    flex: 1,
+    width: 375,
+    height: 200,
   },
 });
 
